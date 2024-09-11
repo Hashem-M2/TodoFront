@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Update Todo Item</h2>
+
+  <form (ngSubmit)="onUpdateTodo()">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title:</label>
+      <input id="title" type="text" [(ngModel)]="todoItem.title" name="title" class="form-control" required>
+    </div>
+    
+    <div class="mb-3">
+      <label for="completed" class="form-check-label">Completed:</label>
+      <input id="completed" type="checkbox" [(ngModel)]="todoItem.completed" name="completed" class="form-check-input">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+
+  <div class="mt-4">
+    <p><strong>Title:</strong> {{ todoItem.title }}</p>
+    <p><strong>Completed:</strong> {{ todoItem.completed ? 'Yes' : 'No' }}</p>
+  </div>
+</div>

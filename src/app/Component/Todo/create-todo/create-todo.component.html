@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <h2>Create New Todo</h2>
+  
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" id="title" [(ngModel)]="title" name="title" class="form-control" required />
+      <div *ngIf="!title && title !== undefined" class="text-danger">
+        Title is required.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="completed" class="form-label">Completed</label>
+      <input type="checkbox" id="completed" [(ngModel)]="completed" name="completed" />
+    </div>
+<div class=" d-flex justify-content-between mt-4">
+    <button type="submit" class="btn btn-primary" [disabled]="!title">Create Todo</button>
+    <button type="button" class="btn btn-secondary" (click)="goToGetTodo()">Get Todo</button>
+  </div>
+  </form>
+</div>

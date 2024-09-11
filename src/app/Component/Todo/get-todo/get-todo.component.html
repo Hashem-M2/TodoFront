@@ -1,0 +1,25 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Todo List</h2>
+  
+  <ul class="list-group">
+    <li *ngFor="let item of todoItems; trackBy: trackById" class="list-group-item d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center">
+        <input type="checkbox"
+               [checked]="item.completed"
+               (change)="toggleCompletion(item)"
+               class="form-check-input me-2">
+        <span [ngClass]="{ 'text-decoration-line-through': item.completed }">{{ item.title }}</span>
+      </div>
+      <div>
+        <button (click)="updateTodo(item)" class="btn btn-warning btn-sm me-2">Update</button>
+        <button (click)="deleteTodo(item.id)" class="btn btn-danger btn-sm">Delete</button>
+      </div>
+
+    </li>
+  </ul>
+
+  <div class="d-flex justify-content-between align-items-center mt-4">
+    <button (click)="previousPage()" [disabled]="currentPage === 1" class="btn btn-primary">Previous</button>
+    <button (click)="nextPage()" class="btn btn-primary">Next</button>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<div class="main">
+		<input type="checkbox" id="chk" aria-hidden="true">
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">Sign in</label>
+				</form>
+			</div>
+
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" [(ngModel)]="loginObj.email" name="email" placeholder="Email" required="">
+					<input type="password" [(ngModel)]="loginObj.password" name="Password" placeholder="Password" required="">
+          <button (click)="onLogin()">Login</button>
+          <div class="text-center "><a class="text-decoration-none" routerLink='/register'style="color: black; font-size: 16px;">Sign Up</a></div>   
+				</form>
+			</div>
+	</div>
+</body>
+</html>
+
